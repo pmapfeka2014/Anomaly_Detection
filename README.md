@@ -7,7 +7,9 @@ safety is critical. Downtime is very low, and so a software doing some real time
 would be the best maintenance strategy.
 
 In this specific project, i have used a robot car to demonstrate anomaly detection in vehicles. This
-robot car is the Pololu 3Pi+ 32U4 robot. 
+robot car is the Pololu 3Pi+ 32U4 robot.The goal of the project is to train a machine learning auto encoder
+on what normal data looks like as the car moves around a specific track, and then feed the autoencoder some
+anomolous data to see if it can flag the data. 
 
 ![image](https://user-images.githubusercontent.com/31663476/144352296-b9932a4b-7978-4f8f-963b-809c3642a9be.png)
 
@@ -66,5 +68,23 @@ and those thresholds are used to categorize an anomaly from a normal data point.
 The images below show the appropriate training losses for the various sensors.
 
 ![image](https://user-images.githubusercontent.com/31663476/144355720-672883d2-d4e9-4245-a7db-a4a8a820b096.png)
+
+![image](https://user-images.githubusercontent.com/31663476/144355897-8ca08743-f699-4e07-a4a2-314c7bf2b31d.png)
+
+![image](https://user-images.githubusercontent.com/31663476/144355948-d282be12-8c8d-4a59-b581-5c84e9c9f99f.png)
+
+I then proceeded to test the autoencoder, by using a test data set from when one of the wheels had its rubber
+coating removed, and measured the losses
+
+![image](https://user-images.githubusercontent.com/31663476/144356201-9172e279-deac-444f-9411-8bbe5c04cff5.png)
+
+![image](https://user-images.githubusercontent.com/31663476/144356474-cac93d76-eac0-4896-a0ff-4a59f1e957d7.png)
+
+In the, end, i then produce a table to compare the set thresholds, to the losses obtained from test data.
+
+![image](https://user-images.githubusercontent.com/31663476/144356726-0e1af829-f418-4f63-8eae-91a93bf64e8c.png)
+The data shows that the left speed sensor data was anomolous as expected. 
+
+
 
 
